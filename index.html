@@ -5,40 +5,63 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 	<title>Kann</title>
 </head>
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="container">
-				<a href="index.html" class="header__logo">
-					<img src="img/logo.png" alt="Logotype">
-				</a>
-				<nav class="header__menu">
-					<ul class="header__list">
-						<li class="header__item"><a href="#" class="header__link">Shop</a></li>
-						<li class="header__item"><a href="#" class="header__link">Projets</a></li>
-						<li class="header__item"><a href="#" class="header__link">Journal</a></li>
-						<li class="header__item"><a href="#" class="header__link">à propos</a></li>
-					</ul>
-				</nav>
-				<nav class="header__menu">
-					<ul class="header__list">
-						<li class="header__item">
-							<div class="header__lang">
-								<a href="#">fr</a>
-								<a href="#">en</a>
+				<div class="header__inner">
+					<div class="header__left">
+						<a href="index.html" class="header__logo">
+							<img src="img/logo.png" alt="Logotype">
+						</a>
+						<nav class="header__menu header__menu--left">
+							<div class="header__menu-inner" id="navLinks">
+								<i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+								<ul class="header__list">
+									<li class="header__item"><a href="#" class="header__link">Shop</a></li>
+									<li class="header__item"><a href="#" class="header__link">Projets</a></li>
+									<li class="header__item"><a href="#" class="header__link">Journal</a></li>
+									<li class="header__item"><a href="#" class="header__link">à propos</a></li>
+								</ul>
 							</div>
-						</li>
-						<li class="header__item"><a href="#" class="header__link">Rechercher</a></li>
-						<li class="header__item"><a href="#" class="header__link">points de vente</a></li>
-						<li class="header__item"><a href="#" class="header__link">Panier <span>(0)</span></a></li>
-					</ul>
-				</nav>
+							<i class="fa-solid fa-bars" onclick="showMenu()"></i>
+						</nav>
+					</div>
+					<div class="header__right">
+						<nav class="header__menu">
+							<ul class="header__list">
+								<li class="header__item header__item--lang">
+									<div id="langDiv" class="header__lang">
+										<a class="header__lang-link active" href="#">fr</a>
+										<a class="header__lang-link" href="#">en</a>
+									</div>
+								</li>
+								<li class="header__item"><a href="#" class="header__link">Rechercher</a></li>
+								<li class="header__item"><a href="#" class="header__link">points de vente</a></li>
+								<li class="header__item"><a href="#" class="header__link">Panier <span>(0)</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 			</div>
 		</header>
-		<main class="main"></main>
+		<main class="main">
+			<section class="preview">
+				<div class="container">
+					<div class="preview__inner">
+						<h1 class="preview__title">Galta collection <br> by SCMP <br> Design Office</h1>
+						<a href="#" class="preview__button">shop</a>
+					</div>
+				</div>
+			</section>
+		</main>
 		<footer class="footer"></footer>
 	</div>
+
+
+	<script src="script.js"></script>
 </body>
 </html>
