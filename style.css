@@ -44,6 +44,8 @@ body {
 img {
 	display: block;
 	object-fit: cover;
+	max-width: 100%;
+	height: auto;
 }
 
 h1, h2 {
@@ -65,14 +67,61 @@ h1, h2 {
 
 .container {
 	width: 100%;
-	padding: 0 1.13rem;
+	padding: 0 clamp(16px, 18vw * var(--vw), 54px);
 	margin: 0 auto;
 }
 
+@media screen and (min-width:2000px) {
+	
+	.container {
+		padding: 0 max(7%, 250px);
+	}
+
+}
+
+.title {
+	font-weight: 700;
+	letter-spacing: 1.2px;
+	font-size: clamp(40px, 60vw * var(--vw), 82px);
+	line-height: 1;
+}
+
+@media screen and (max-width: 990px) {
+
+	.title {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.link {
+	font-size: 15px;
+	text-transform: lowercase;
+
+	transition: opacity 0.3s ease 0s;
+}
+
+.link:hover {
+	opacity: .7;
+}
+
+@media screen and (min-width: 1800px) {
+
+	.link {
+		font-size: 18px;
+	}
+
+}
+
 .header {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	background-color: transparent;
+	transition: background-color 0.3s ease 0s;
+}
+
+.header:hover {
+	background-color: #fff;
 }
 
 .header__inner {
@@ -204,14 +253,13 @@ h1, h2 {
 .preview {
 	height: 100vh;
 	background: url('img/preview.png') center / cover no-repeat;
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
 }
-
-.preview__inner {}
 
 .preview__title {
 	padding-top: clamp(100px, 291vw * var(--vw), 300px);
 	font-weight: 700;
-	font-size: clamp(40px, 57vw * var(--vw), 60px);
+	font-size: clamp(40px, 57vw * var(--vw), 80px);
 	letter-spacing: 1.2px;
 	margin-bottom: 10px;
 }
@@ -222,4 +270,326 @@ h1, h2 {
 	text-transform: lowercase;
 	padding: 5px 15px;
 	border: 1px solid #000000;
+}
+
+
+.manufacturing {
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
+}
+
+.manufacturing__inner {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+.manufacturing__title {
+	align-self: center;
+}
+
+@media screen and (min-width: 1800px) {
+
+	.manufacturing__pic img {
+		width: 60vw;
+	}
+
+}
+
+@media screen and (max-width: 990px) {
+	
+	.manufacturing__inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.manufacturing__title {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+
+.sofa {
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
+}
+
+.sofa__inner {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+.sofa__pic {
+	margin: auto 0;
+}
+
+.sofa__titles {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sofa__link {
+	margin-top: 3px;
+}
+
+@media screen and (min-width: 1800px) {
+	
+	.sofa__pic img {
+		width: 60vw;
+	}
+
+	.sofa__link {
+		font-size: 18px;
+	}
+
+}
+
+@media screen and (max-width: 990px) {
+
+	.sofa__inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
+
+
+.office {
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
+}
+
+.office__inner {
+	display: flex;
+	gap: clamp(30px, 89vw * var(--vw), 200px);
+}
+
+.office__name {
+	position: relative;
+}
+
+.office__link {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+@media screen and (min-width: 1800px) {
+
+	.office__pic img {
+		width: 60vw;
+	}
+
+}
+
+@media screen and (max-width: 990px) {
+
+	.office__inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.office__pic {
+		order: 2;
+	}
+
+	.office__name {
+		order: 1;
+	}
+
+	.office__title {
+		margin-bottom: 15px;
+	}
+
+	.office__link {
+		display: block;
+		position: static;
+		text-align: center;
+	} 
+
+}
+
+
+.chairs {
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
+}
+
+.chairs__inner {
+	display: flex;
+	justify-content: space-between;
+	gap: clamp(30px, 89vw * var(--vw), 200px);
+}
+
+.chairs__pic {
+	position: relative;
+	margin: auto 0;
+}
+
+.chairs__name {
+	margin-top: 3px;
+}
+
+.chairs__name--l {
+	position: absolute;
+	right: 0;
+}
+
+.chairs__name p {
+	display: inline-block;
+}
+
+.chairs__link {
+	position: absolute;
+	right: 0;
+}
+
+@media screen and (min-width: 1800px) {
+
+	.chairs__pic img {
+		width: 60vw;
+	}
+
+}
+
+@media screen and (max-width: 990px) {
+
+	.chairs__inner {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 35px;
+	}
+
+}
+
+
+.list {
+	margin-bottom: max(50px, calc(115vw * var(--vw)));
+}
+
+.list__col {
+	margin-left: calc(299vw * var(--vw));
+}
+
+.list__item {
+	font-size: clamp(45px, 59vw * var(--vw), 65px);
+	letter-spacing: 1.2px;
+	text-transform: lowercase;
+	line-height: 1;
+	transition: opacity 0.3s ease 0s;
+}
+
+.list__item:hover {
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+
+	.list__col {
+		margin: 0;
+		text-align: center;
+	}
+
+}
+
+
+
+.footer__feedback {
+	border-bottom: 1px solid var(--font-color);
+	margin-bottom: 75px;
+}
+
+.footer__cta {
+	font-size: clamp(32px, 45vw * var(--vw), 47px);
+	line-height: 1;
+	letter-spacing: .94px;
+	margin-bottom: 5px;
+}
+
+.footer__form {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-block: 20px 27px;
+	gap: 5px;
+}
+
+.footer__form input {
+	width: 86%;
+	padding: 15px;
+	font-size: 20px;
+}
+
+.footer__btn {
+	font-size: clamp(32px, 46vw * var(--vw), 47px);
+	letter-spacing: .94px;
+	border: 0;
+	background-color: transparent;
+	text-transform: lowercase;
+}
+
+@media screen and (max-width: 990px) {
+
+	.footer__form {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 10px;
+	}
+
+	.footer__form input {
+		width: 100%;
+	}
+
+}
+
+.footer__info {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, clamp(150px, 266vw * var(--vw), 360px));
+	gap: 18px;
+	margin-bottom: 115px;
+}
+
+.footer__caption {
+	font-size: 14px;
+	text-transform: lowercase;
+	margin-bottom: 18px;
+}
+
+.footer__item:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.footer__rights {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 18px;
+	color: #B3B3B3;
+	font-size: 15px;
+	text-transform: lowercase;
+}
+
+.footer__copiright p {
+	display: inline-block;
+}
+
+.footer__copiright p:not(:last-child) {
+	margin-right: 21px;
+}
+
+@media screen and (max-width: 700px) {
+
+	.footer__info {
+		justify-content: center;
+	}
+
+	.footer__col {
+		margin-bottom: 40px;
+	}
+
+}
+
+@media screen and (max-width: 425px) {
+
+	.footer__info {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+
 }
