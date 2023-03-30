@@ -524,6 +524,7 @@ h1, h2 {
 	border: 0;
 	background-color: transparent;
 	text-transform: lowercase;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 990px) {
